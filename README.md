@@ -1,17 +1,21 @@
 # AWS Lambda in TypeScript
 
-## Install the dependencies
+## Install
 
-```bash
-npm install
-```
+1. Dependencies
+
+  ```bash
+  npm install
+  ```
+
+2. Download [ngrok](https://ngrok.com/) in the root folder
 
 ## Run project
 
 1. Open a console
 
   ```bash
-  npm ngrok
+  npm run ngrok
   ```
 
   Copy the https link go to Alexa Console, under Endpoint section, select `HTTPS` and paste the link in `Default Region` input field. From the below dropdown choose `My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority`.
