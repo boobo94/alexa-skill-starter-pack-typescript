@@ -2,7 +2,7 @@
   "name": "alexa-skill-starter-pack-typescript",
   "version": "1.0.0",
   "description": "A sample to create AWS Lambda functions in TypeScript with Serverless.",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "scripts": {
     "start": "nodemon",
     "build": "npm run clean && gulp",
