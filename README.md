@@ -80,7 +80,9 @@ Press `Add permission` button > `Attach existing policy` > `Create policy` > ope
 }
 ```
 
-In order to deploy:
+Last step, go to `./ask/config` and place you `skill_id` and your lambda arn.
+
+In order to deploy run:
 
 `$ ask deploy`
 
