@@ -1,0 +1,30 @@
+{
+  "name": "alexa-skill-starter-pack-typescript",
+  "version": "1.0.0",
+  "description": "A sample to create AWS Lambda functions in TypeScript with Serverless.",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "nodemon",
+    "build": "npm run clean && gulp",
+    "ngrok": "./ngrok http -bind-tls=true -host-header=rewrite 3000",
+    "clean": "rimraf dist",
+    "deploy": "npm run build && ask deploy"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "tslint",
+    "typescript"
+  ],
+  "author": "Bogdan Alexandru Militaru",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boobo94/alexa-skill-starter-pack-typescript.git"
+  },
+  "dependencies": {
+    "ask-sdk": "^2.0.7",
+    "ask-sdk-core": "^2.0.7",
+    "ask-sdk-model": "^1.3.1"
+  }
+}
