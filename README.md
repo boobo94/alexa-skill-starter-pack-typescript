@@ -26,6 +26,64 @@
   npm start
   ```
 
+## Deploy
+
+Use npm to install ASK CLI. If you already have ASK CLI installed and want to update to the latest version, install it in the same way as a new user.
+
+`$ npm install -g ask-cli`
+
+After you install ask-cli, initialize ASK CLI:
+
+`$ ask init`  
+
+You will be prompted to name your profile (default by default), choose the AWS profile to use, and to log in to your Amazon developer account. Once the initialization is complete, you can use ASK CLI to manage your skill.
+
+If you choose to create a new one, first go in AWS IAM, create an user or choose an existing one and  create an access key.
+
+Press `Add permission` button > `Attach existing policy` > `Create policy` > open JSON format and paste the following code
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateRole",
+                "iam:GetRole",
+                "iam:AttachRolePolicy",
+                "iam:PassRole"
+            ],
+            "Resource": "arn:aws:iam::*:role/ask-*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:AddPermission",
+                "lambda:CreateFunction",
+                "lambda:GetFunction",
+                "lambda:UpdateFunctionCode",
+                "lambda:ListFunctions"
+            ],
+            "Resource": "arn:aws:lambda:*:*:function:ask-*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:FilterLogEvents",
+                "logs:getLogEvents",
+                "logs:describeLogStreams"
+            ],
+            "Resource": "arn:aws:logs:*:*:log-group:/aws/lambda/ask-*"
+        }
+    ]
+}
+```
+
+In order to deploy:
+
+`$ ask deploy`
+
 ## Developer tasks
 
 Frequently used `npm script`s:
@@ -43,3 +101,5 @@ Frequently used `npm script`s:
 3. https://ask-sdk-for-nodejs.readthedocs.io/en/latest/Developing-Your-First-Skill.html
 4. https://ngrok.com/
 5. https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs
+6. https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html
+7. https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html
