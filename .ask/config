@@ -1,0 +1,31 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.XXXXX",
+      "was_cloned": false,
+      "merge": {
+        "manifest": {
+          "apis": {
+            "custom": {
+              "endpoint": {
+                "uri": "arn:aws:lambda:eu-west-1:XXXXX:function:NAME"
+              }
+            }
+          }
+        }
+      },
+      "resources": {
+        "manifest": {
+          "eTag": "9a9cf7cc93901b7534766f025c9d726a"
+        },
+        "lambda": [
+          {
+            "arn": "arn:aws:lambda:eu-west-1:XXXXXX:function:NAME",
+            "revisionId": "b3c9fb94-a531-41e9-986e-0aebc332e4d3"
+          }
+        ]
+      },
+      "in_skill_products": []
+    }
+  }
+}
