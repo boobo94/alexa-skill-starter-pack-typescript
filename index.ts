@@ -1,10 +1,10 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { LambdaHandler } from "ask-sdk-core/dist/skill/factory/BaseSkillFactory";
-import { RequestEnvelope } from "ask-sdk-model";
+import { RequestEnvelope } from "./node_modules/ask-sdk-model";
 import { AddressInfo } from "net";
 
-import {handler} from './index.handler'
+import { handler } from './lambda/custom/index'
 
 // Convert LambdaFunction to RequestHandler
 
