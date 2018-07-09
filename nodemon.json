@@ -1,6 +1,6 @@
 {
   "watch": [
-    "src"
+    "lambda/custom"
   ],
   "ext": "ts",
   "ignore": [
