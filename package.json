@@ -8,7 +8,8 @@
     "build": "npm run clean && gulp",
     "ngrok": "./ngrok http -bind-tls=true -host-header=rewrite 3000",
     "clean": "rimraf dist",
-    "deploy": "npm run build && ask deploy"
+    "deploy": "npm run build && ask deploy",
+    "sync:model": "ask api get-model -s amzn1.ask.skill.XXXXX -l en-US > models/en-US.json",
   },
   "keywords": [
     "aws",
