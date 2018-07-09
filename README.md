@@ -94,6 +94,12 @@ Frequently used `npm script`s:
 |---------------|---------------------------------------------------------------------------------------------------------------------|
 | `start`       | Runs the service locally, so you can call your API endpoints on http://localhost.                                   |
 | `ngrok`       | Runs the ngrok service locally, so you can use the https endpoint in Alexa skill:  https://XXXXX.ngrok.io.          |
+| `build`       | Clean the build and start a new process to build again the files          |
+| `clean`       | Clean the build         |
+| `deploy`       | Build the project and then deploy to aws lambda         |
+| `sync:model`       | Sync the model from Alexa Skill Console with local model from models folder         |
+
+
 
 
 ## Resources
