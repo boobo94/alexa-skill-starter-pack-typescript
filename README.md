@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/boobo94/alexa-skill-starter-pack-typescript?branch=master)](https://bettercodehub.com/)
+
 # AWS Lambda in TypeScript
 
 ## Install
