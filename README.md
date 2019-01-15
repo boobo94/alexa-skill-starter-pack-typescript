@@ -81,6 +81,7 @@ Press `Add permission` button > `Attach existing policy` > `Create policy` > ope
     ]
 }
 ```
+Refference [here](https://developer.amazon.com/docs/smapi/set-up-credentials-for-an-amazon-web-services-account.html)
 
 Last step, go to `./ask/config` and place you `skill_id` and your lambda arn.
 
