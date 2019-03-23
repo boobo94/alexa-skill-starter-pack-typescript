@@ -1,6 +1,6 @@
 import * as  Alexa from 'ask-sdk'
 
-export const Default: Alexa.ErrorHandler = {
+export const Unknown: Alexa.ErrorHandler = {
     canHandle() {
         return true;
     },

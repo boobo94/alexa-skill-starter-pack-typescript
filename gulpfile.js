@@ -3,7 +3,7 @@ var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json");
 
 var IN_DIR = "lambda/custom/";
-const OUT_DIR = "dist/lambda/custom/";
+const OUT_DIR = "dist/custom/";
 
 // compile typescript
 gulp.task("compile", function () {

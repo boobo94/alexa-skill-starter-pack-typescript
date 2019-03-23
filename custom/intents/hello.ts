@@ -1,6 +1,6 @@
-import * as  Alexa from 'ask-sdk'
+import { RequestHandler } from "ask-sdk";
 
-export const HelloWorldIntentHandler: Alexa.RequestHandler = {
+export const HelloWorldIntentHandler: RequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
             && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
