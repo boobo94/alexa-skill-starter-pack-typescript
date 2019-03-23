@@ -1,8 +1,8 @@
 import { RequestInterceptor } from "ask-sdk-core";
 import i18next from 'i18next';
 import * as sprintf from "i18next-sprintf-postprocessor";
-import { locales } from "../../locales";
 import { RequestAttributes } from "../lib/interfaces";
+import { locales } from "../locales";
 
 
 type TranslationFunction = (...args: any[]) => string;
