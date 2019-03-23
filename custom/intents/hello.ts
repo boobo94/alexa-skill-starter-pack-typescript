@@ -1,4 +1,5 @@
 import { RequestHandler } from "ask-sdk";
+import { GetRequestAttributes } from "../lib/helpers";
 
 export const HelloWorldIntentHandler: RequestHandler = {
     canHandle(handlerInput) {
@@ -6,7 +7,8 @@ export const HelloWorldIntentHandler: RequestHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
     },
     handle(handlerInput) {
-        const speechText = 'Hello World!';
+        const { t } = GetRequestAttributes(handlerInput)
+        const speechText = t("WELCOME_MSG")
 
         return handlerInput.responseBuilder
             .speak(speechText)

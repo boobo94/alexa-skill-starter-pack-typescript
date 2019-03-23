@@ -1,17 +1,18 @@
 import { RequestHandler } from 'ask-sdk';
+import { GetRequestAttributes, IsIntent } from '../lib/helpers';
+import { IntentTypes } from '../lib/types';
 
 export const HelpIntentHandler: RequestHandler = {
     canHandle(handlerInput) {
-        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
+        return IsIntent(handlerInput, IntentTypes.Help)
     },
     handle(handlerInput) {
-        const speechText = 'You can say hello to me!';
+        const { t } = GetRequestAttributes(handlerInput)
+        const speechText = t("HELP_MSG")
 
         return handlerInput.responseBuilder
             .speak(speechText)
-            .reprompt(speechText)
-            .withSimpleCard('Hello World', speechText)
+            .withSimpleCard(t('SKILL_NAME'), speechText)
             .getResponse();
     }
 };

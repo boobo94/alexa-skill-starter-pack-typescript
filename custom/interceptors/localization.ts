@@ -1,7 +1,9 @@
 import { RequestInterceptor } from "ask-sdk-core";
-import * as i18n from "i18next";
+import i18next from 'i18next';
 import * as sprintf from "i18next-sprintf-postprocessor";
-import { locales } from '../../locales/index';
+import { locales } from "../../locales";
+import { RequestAttributes } from "../lib/interfaces";
+
 
 type TranslationFunction = (...args: any[]) => string;
 
@@ -10,26 +12,22 @@ type TranslationFunction = (...args: any[]) => string;
  */
 export const Localization: RequestInterceptor = {
     process(handlerInput) {
-        const localizationClient = i18n.use(sprintf).init({
-            lng: handlerInput.requestEnvelope.request.locale,
+        const localizationClient = i18next.use(sprintf).init({
+            lng: (handlerInput.requestEnvelope.request as any).locale,
             overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
             resources: locales,
             returnObjects: true,
         });
 
-        const attributes = handlerInput.attributesManager.getRequestAttributes();
+        const attributes = handlerInput.attributesManager.getRequestAttributes() as RequestAttributes;
+
         attributes.t = function (...args: any[]) {
-            return (localizationClient.t as TranslationFunction)(...args);
+            return (i18next.t as TranslationFunction)(...args);
         };
 
         attributes.tr = function (key: any) {
-            const result = localizationClient.t(key) as string[];
-
-            return Random(result);
+            const arr = i18next.t(key) as string[];
+            return arr[Math.floor(Math.random() * arr.length)];
         };
     },
 };
-
-export function Random<T>(arr: T[]): T {
-    return arr[Math.floor(Math.random() * arr.length)];
-}
