@@ -3,7 +3,7 @@ import * as bodyParser from "body-parser";
 import { LambdaHandler } from "ask-sdk-core/dist/skill/factory/BaseSkillFactory";
 import { RequestEnvelope } from "ask-sdk-model";
 import { AddressInfo } from "net";
-import { handler } from '../custom/index';
+import { handler } from '../lambda/custom/index';
 
 
 // Convert LambdaFunction to RequestHandler

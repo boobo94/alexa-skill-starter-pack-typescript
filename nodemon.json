@@ -6,5 +6,9 @@
   "ignore": [
     "src/**/*.spec.ts"
   ],
-  "exec": "ts-node ./local/index.ts"
+  "exec": "ts-node ./local/index.ts",
+  "env": {
+    "ENV": "dev",
+    "AWS_REGION": "eu-west-1"
+  }
 }

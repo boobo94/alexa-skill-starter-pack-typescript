@@ -21,8 +21,9 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "dist"
-        }
+          "sourceDir": "dist/custom"
+        },
+        "interfaces": []
       }
     },
     "manifestVersion": "1.0"

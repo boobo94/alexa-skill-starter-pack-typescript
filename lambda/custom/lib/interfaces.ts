@@ -1,4 +1,4 @@
-
+import { States } from "./types";
 
 export interface RequestAttributes {
     /**
@@ -12,4 +12,12 @@ export interface RequestAttributes {
 
 }
 
-export interface SessionAttributes { }
+export interface SessionAttributes {
+    state: States
+    firstTimeUser: boolean;
+
+}
+
+export interface PersistentAttributes {
+
+}

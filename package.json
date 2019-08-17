@@ -49,10 +49,10 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
-    "ask-sdk": "^2.5.1",
-    "ask-sdk-core": "^2.5.1",
-    "ask-sdk-model": "^1.13.0",
-    "i18next": "^15.0.7",
+    "ask-sdk": "^2.5.2",
+    "ask-sdk-core": "^2.5.2",
+    "ask-sdk-model": "^1.15.1",
+    "i18next": "^15.1.0",
     "i18next-sprintf-postprocessor": "^0.2.2"
   }
 }

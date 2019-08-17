@@ -5,8 +5,8 @@
     "pretty": true,
     "sourceMap": false,
     "target": "es6",
-    "outDir": "./dist",
-    "rootDir": "./custom",
+    "outDir": "dist",
+    "rootDir": "lambda",
     "resolveJsonModule": true,
   },
   "exclude": [

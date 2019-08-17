@@ -1,19 +1,19 @@
-import { RequestHandler } from "ask-sdk";
+import { RequestHandler } from 'ask-sdk';
 import { GetRequestAttributes, IsIntent } from '../lib/helpers';
-import { IntentTypes } from "../lib/types";
+import { IntentTypes } from '../lib/types';
 
-export const CancelAndStopIntentHandler: RequestHandler = {
+export const HelpIntentHandler: RequestHandler = {
     canHandle(handlerInput) {
-        return IsIntent(handlerInput, IntentTypes.Cancel) || IsIntent(handlerInput, IntentTypes.Stop)
+        return IsIntent(handlerInput, IntentTypes.Help)
     },
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput)
-        const speechText = t("GOODBYE_MSG")
+        const speechText = t("HELP_MSG")
 
         return handlerInput.responseBuilder
             .speak(speechText)
+            .reprompt(speechText)
             .withSimpleCard(t('SKILL_NAME'), speechText)
-            .withShouldEndSession(true)
             .getResponse();
     }
 };

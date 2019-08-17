@@ -1,9 +1,10 @@
 import * as  Alexa from 'ask-sdk'
 import { GetRequestAttributes } from '../lib/helpers';
+import { RequestTypes } from '../lib/types';
 
 export const LaunchRequestHandler: Alexa.RequestHandler = {
     canHandle(handlerInput) {
-        return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
+        return handlerInput.requestEnvelope.request.type === RequestTypes.Launch;
     },
     handle(handlerInput) {
         const { t } = GetRequestAttributes(handlerInput)
@@ -11,7 +12,7 @@ export const LaunchRequestHandler: Alexa.RequestHandler = {
 
         return handlerInput.responseBuilder
             .speak(speechText)
-            .withSimpleCard(t('SKILL_NAME'), speechText)
+            .reprompt(speechText)
             .getResponse();
     }
 };

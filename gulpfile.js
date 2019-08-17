@@ -5,8 +5,8 @@ const path = require("path");
 const child_process = require("child_process");
 const del = require("del");
 
-const IN_DIR = "custom/";
-const OUT_DIR = "dist/";
+const IN_DIR = "lambda/custom/";
+const OUT_DIR = "dist/custom/";
 
 gulp.task("tsc", function (done) {
     const tscPath = path.normalize("./node_modules/.bin/tsc");
@@ -59,10 +59,10 @@ gulp.task("models", function (done) {
 
     const invocations = {
         [Environments.Dev]: {
-            [Locales.enUS]: "probot dev",
+            [Locales.enUS]: "greeter",
         },
         [Environments.Prod]: {
-            [Locales.enUS]: "probot",
+            [Locales.enUS]: "greeter",
         },
     };
 
