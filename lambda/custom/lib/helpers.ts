@@ -64,18 +64,6 @@ export function GetSlotValues(handlerInput: HandlerInput): SlotValues {
                             case "ER_SUCCESS_MATCH":
                                 foundMatch = true;
 
-                                const valueWrappers = resolution.values;
-
-                                if (valueWrappers.length > 1) {
-                                    slotValues[name] = {
-                                        name: name,
-                                        value: value,
-                                        isMatch: true,
-                                        confirmationStatus: confirmationStatus,
-                                    };
-                                    break;
-                                }
-
                                 slotValues[name] = {
                                     name: name,
                                     value: value,
